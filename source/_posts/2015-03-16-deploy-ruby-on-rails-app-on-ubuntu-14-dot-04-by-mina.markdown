@@ -63,12 +63,6 @@ $ sudo apt-get install nginx-full passenger
 $ sudo service nginx start
 {% endcodeblock %}
 
-
-
-
-
-
-
 - setup nginx
 ```
 $ sudo nano /etc/nginx/nginx.conf
@@ -147,6 +141,7 @@ $ mina setup # after tweak your mina deploy.rb file, run this.
 
 $ mina deploy # if mina setup is allpass, run this.
 {% endcodeblock %}
+
 - `mina init` will created config/deploy.rb. after this you might want to customize your [deploy.rb file.](https://gist.github.com/jbonney/6257372)
 
 - done.
