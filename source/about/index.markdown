@@ -8,7 +8,7 @@ footer: true
 ---
 ## AndyZ
 
-Skilled web application developer with experience in Ruby on Rails, PHP, SQL, jQuery, JavaScript, Bootstrap, jQuery Mobile, and Git. 
+Skilled web application developer with experience in Ruby on Rails, PHP, SQL, jQuery, JavaScript, Bootstrap, jQuery Mobile, PhoneGap, and Git. 
 
 - Experience with deployment by Mina on VPS.
 - Experience with Git versioning system
