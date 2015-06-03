@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Windows | AndyZ's Blog]]></title>
+  <link href="http://andystu.github.io/blog/categories/windows/atom.xml" rel="self"/>
+  <link href="http://andystu.github.io/"/>
+  <updated>2015-06-03T22:43:56+08:00</updated>
+  <id>http://andystu.github.io/</id>
+  <author>
+    <name><![CDATA[AndyZ (Yu-Chieh Chang)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Install Paperclip for Rails App on Windows]]></title>
+    <link href="http://andystu.github.io/blog/2015/06/03/how-to-install-paperclip-for-rails-app-on-windows/"/>
+    <updated>2015-06-03T22:34:43+08:00</updated>
+    <id>http://andystu.github.io/blog/2015/06/03/how-to-install-paperclip-for-rails-app-on-windows</id>
+    <content type="html"><![CDATA[<ul>
+<li><p>If we want to run rails app with paperclip in windows environment, we need to install two package for it.</p></li>
+<li><p>GnuWin32 - <a href="http://gnuwin32.sourceforge.net/packages/file.htm">http://gnuwin32.sourceforge.net/packages/file.htm</a></p></li>
+<li><p>ImageMagick binary-  <a href="http://www.imagemagick.org/download/binaries/">http://www.imagemagick.org/download/binaries/</a></p></li>
+<li><p>Next, we should install the correct static version for your OS (32-bit vs 64-bit) (not dll version)</p></li>
+<li><p>Finnally, we need to add the bin directory to your environment path (in config/environment/development.rb or production.rb) as following lines:</p></li>
+</ul>
+
+
+<pre><code class="ruby">...
+Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin; C:\Program Files\ImageMagick-6.7.6-3-Q16' 
+Paperclip.options[:swallow_stderr] = false
+...
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

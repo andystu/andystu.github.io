@@ -9,16 +9,8 @@
   <meta name="author" content="AndyZ (Yu-Chieh Chang)">
 
   
-  <meta name="description" content="install node js by Homebrew 1
-2
-3
-4
-$ brew doctor
-$ brew update
-$ brew install node
-$ brew install ant install cordova and ionic by npm 1
-2
-$ npm &hellip;">
+  <meta name="description" content="If we want to run rails app with paperclip in windows environment, we need to install two package for it.
+GnuWin32 - http://gnuwin32.sourceforge.net &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +79,53 @@ $ npm &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/03/how-to-install-paperclip-for-rails-app-on-windows/">How to Install Paperclip for Rails App on Windows</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-03T22:34:43+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>10:34 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><p>If we want to run rails app with paperclip in windows environment, we need to install two package for it.</p></li>
+<li><p>GnuWin32 - <a href="http://gnuwin32.sourceforge.net/packages/file.htm">http://gnuwin32.sourceforge.net/packages/file.htm</a></p></li>
+<li><p>ImageMagick binary-  <a href="http://www.imagemagick.org/download/binaries/">http://www.imagemagick.org/download/binaries/</a></p></li>
+<li><p>Next, we should install the correct static version for your OS (32-bit vs 64-bit) (not dll version)</p></li>
+<li><p>Finnally, we need to add the bin directory to your environment path (in config/environment/development.rb or production.rb) as following lines:</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'><span class="no">Paperclip</span><span class="o">.</span><span class="n">options</span><span class="o">[</span><span class="ss">:command_path</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;C:\Program Files (x86)\GnuWin32\bin; C:\Program Files\ImageMagick-6.7.6-3-Q16&#39;</span>
+</span><span class='line'><span class="no">Paperclip</span><span class="o">.</span><span class="n">options</span><span class="o">[</span><span class="ss">:swallow_stderr</span><span class="o">]</span> <span class="o">=</span> <span class="kp">false</span>
+</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -621,65 +660,6 @@ $ npm &hellip;">
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/02/16/how-to-install-and-deploy-redmine-on-heroku/">How to Install and Deploy Redmine 2.6.x on Heroku</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-02-16T09:40:12+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>9:40 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git clone https://github.com/redmine/redmine.git -b 2.6-stable
-</span><span class='line'>$ cd redmine</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>remove those files from .gitignore</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Gemfile.lock
-</span><span class='line'>Gemfile.local
-</span><span class='line'>public/plugin_assets 
-</span><span class='line'>config/initializers/session_store.rb 
-</span><span class='line'>config/initializers/secret_token.rb 
-</span><span class='line'>config/configuration.yml 
-</span><span class='line'>config/email.yml</span></code></pre></td></tr></table></div></figure>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/02/16/how-to-install-and-deploy-redmine-on-heroku/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -699,6 +679,10 @@ $ npm &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/06/03/how-to-install-paperclip-for-rails-app-on-windows/">How to Install Paperclip for Rails App on Windows</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/04/01/how-to-install-ionic-and-its-dependencies/">How to Install Ionic and Its Dependencies</a>
       </li>
     
@@ -712,10 +696,6 @@ $ npm &hellip;">
     
       <li class="post">
         <a href="/blog/2015/03/16/deploy-ruby-on-rails-app-on-ubuntu-14-dot-04-by-mina/">Deploy Ruby on Rails App on Ubuntu 14.04 by Mina</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/12/how-to-generate-email-view-and-send-it-out-within-rails-application/">How to Generate Email View and Send It Out Within Rails Application</a>
       </li>
     
   </ul>
