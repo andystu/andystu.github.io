@@ -4,7 +4,7 @@
   <title><![CDATA[AndyZ's Blog]]></title>
   <link href="http://andystu.github.io/atom.xml" rel="self"/>
   <link href="http://andystu.github.io/"/>
-  <updated>2015-06-03T22:43:56+08:00</updated>
+  <updated>2015-09-19T23:01:58+08:00</updated>
   <id>http://andystu.github.io/</id>
   <author>
     <name><![CDATA[AndyZ (Yu-Chieh Chang)]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Converting File to Utf8 Encode by Iconv]]></title>
+    <link href="http://andystu.github.io/blog/2015/09/19/converting-file-to-utf8-encode-by-iconv/"/>
+    <updated>2015-09-19T22:47:20+08:00</updated>
+    <id>http://andystu.github.io/blog/2015/09/19/converting-file-to-utf8-encode-by-iconv</id>
+    <content type="html"><![CDATA[<ul>
+<li>Sometimes, we need to convert file from different encode to utf8 before we may open and edit it. <strong>iconv</strong> command make it easy.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># convert input_file from big5 encode to utf8 encode
+</span><span class='line'>$ iconv -f BIG5 -t UTF8 input_file &gt; output_file</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>done.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Install Paperclip for Rails App on Windows]]></title>
@@ -1457,46 +1480,6 @@ source/_includes/custom/category_feed.xml
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake tmp:clear <span class="c"># for recompile asset tmp</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Rails Console Tips: Table Operations]]></title>
-    <link href="http://andystu.github.io/blog/2015/02/02/rails-console-tips-table-operations/"/>
-    <updated>2015-02-02T18:04:19+08:00</updated>
-    <id>http://andystu.github.io/blog/2015/02/02/rails-console-tips-table-operations</id>
-    <content type="html"><![CDATA[<h2>In rails console, you can</h2>
-
-<h3>list tables</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&gt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">tables</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>list a table structure (but it is a protected method)</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># this dose not work. </span>
-</span><span class='line'><span class="o">&gt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">table_structure</span><span class="p">(</span><span class="s2">&quot;projects&quot;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1"># we should utilize send method to call protected method</span>
-</span><span class='line'><span class="o">&gt;</span> <span class="vi">@c</span> <span class="o">=</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">connection</span>
-</span><span class='line'><span class="o">&gt;</span> <span class="vi">@c</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="ss">:table_structure</span><span class="p">,</span> <span class="s2">&quot;xxxs&quot;</span><span class="p">)</span> <span class="c1"># xxxs is your model name</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>show table schema</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&gt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">columns</span> <span class="ss">:table_name</span>
 </span></code></pre></td></tr></table></div></figure>
 
 ]]></content>

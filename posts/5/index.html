@@ -9,8 +9,18 @@
   <meta name="author" content="AndyZ (Yu-Chieh Chang)">
 
   
-  <meta name="description" content="在另外一台Mac上安裝octopress編輯環境, 可對應編輯同一個github的blog copy prikey from your master mac to your 2nd mac device and put it under ~/.ssh folder
-clone your &hellip;">
+  <meta name="description" content="CREATE OUR NEW RAILS APPLICATION 1
+2
+3
+4
+5
+$ rails new reddit
+$ cd reddit
+$ git init
+$ git add .
+$ git commit -m "reddit init" LINK SUBMISSIONS 1
+2
+3 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +89,70 @@ clone your &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/12/22/learning-notes-for-12in12-week-1/">Learning Notes for 12in12 Week 1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-22T17:17:40+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2014</span></span> <span class='time'>5:17 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>CREATE OUR NEW RAILS APPLICATION</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rails new reddit
+</span><span class='line'>$ cd reddit
+</span><span class='line'>$ git init
+</span><span class='line'>$ git add .
+</span><span class='line'>$ git commit -m "reddit init"</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>LINK SUBMISSIONS</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git checkout -b link_scaffold
+</span><span class='line'>$ rails g scaffold link title:string url:string
+</span><span class='line'>$ rake db:migrate
+</span><span class='line'>$ git add .
+</span><span class='line'>$ git commit -m "Generate Links Scafffold"
+</span><span class='line'>$ git checkout master
+</span><span class='line'>$ git merge link_scaffold</span></code></pre></td></tr></table></div></figure>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/12/22/learning-notes-for-12in12-week-1/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -377,6 +451,10 @@ github <a href="https://help.github.com/articles/generating-ssh-keys/">上傳ssh
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/09/19/converting-file-to-utf8-encode-by-iconv/">Converting File to Utf8 Encode by Iconv</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/06/03/how-to-install-paperclip-for-rails-app-on-windows/">How to Install Paperclip for Rails App on Windows</a>
       </li>
     
@@ -390,10 +468,6 @@ github <a href="https://help.github.com/articles/generating-ssh-keys/">上傳ssh
     
       <li class="post">
         <a href="/blog/2015/03/17/enable-ssh-in-ubuntu/">Enable Ssh in Ubuntu</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/16/deploy-ruby-on-rails-app-on-ubuntu-14-dot-04-by-mina/">Deploy Ruby on Rails App on Ubuntu 14.04 by Mina</a>
       </li>
     
   </ul>
