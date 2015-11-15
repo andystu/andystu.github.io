@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://andystu.github.io/blog/2015/11/15/how-to-put-css-in-html-body/</loc>
+    <lastmod>2015-11-15T23:49:47+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://andystu.github.io/blog/2015/09/19/converting-file-to-utf8-encode-by-iconv/</loc>
     <lastmod>2015-09-19T22:47:20+08:00</lastmod>
     <priority>0.8</priority>
@@ -227,19 +232,19 @@
   </url>
   <url>
     <loc>http://andystu.github.io/blog/archives/</loc>
-    <lastmod>2015-09-19T23:01:58+08:00</lastmod>
+    <lastmod>2015-11-16T00:21:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://andystu.github.io/</loc>
-    <lastmod>2015-09-19T23:01:58+08:00</lastmod>
+    <lastmod>2015-11-16T00:21:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://andystu.github.io/about/</loc>
-    <lastmod>2015-09-19T23:01:58+08:00</lastmod>
+    <lastmod>2015-11-16T00:21:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

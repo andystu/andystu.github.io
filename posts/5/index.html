@@ -9,18 +9,8 @@
   <meta name="author" content="AndyZ (Yu-Chieh Chang)">
 
   
-  <meta name="description" content="CREATE OUR NEW RAILS APPLICATION 1
-2
-3
-4
-5
-$ rails new reddit
-$ cd reddit
-$ git init
-$ git add .
-$ git commit -m "reddit init" LINK SUBMISSIONS 1
-2
-3 &hellip;">
+  <meta name="description" content="Install git via homebrew 1
+$ brew install git # If we want to use gitk (git GUI), this way is very convinient. (however, I think SourceTree is better &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,6 +79,171 @@ $ git commit -m "reddit init" LINK SUBMISSIONS 1
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/12/23/git-usage-notes/">Git Usage Notes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-23T16:11:10+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>4:11 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Install git via homebrew</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>brew install git <span class="c"># If we want to use gitk (git GUI), this way is very convinient. (however, I think SourceTree is better.)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Git work processes</h2>
+
+<ul>
+<li>sign up a github account</li>
+<li>create a repos (repository) with a &ldquo;name&rdquo;</li>
+<li>then git it</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># rails project</span>
+</span><span class='line'><span class="nv">$ </span>rails new app
+</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>app
+</span><span class='line'><span class="nv">$ </span>git init
+</span><span class='line'><span class="nv">$ </span>git add .
+</span><span class='line'><span class="nv">$ </span>git commit -m <span class="s1">&#39;first commit&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span>git checkout -b branch_name
+</span><span class='line'><span class="nv">$ </span>git branch <span class="c"># list branches in the project</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># do some changes under this branch ...  </span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span>git add .
+</span><span class='line'><span class="nv">$ </span>git commit -am <span class="s1">&#39;some thing in this brach&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># more about `git commit` </span>
+</span><span class='line'><span class="nv">$ </span>git commit -am <span class="s1">&#39;xxxx&#39;</span> <span class="c"># == git add . + git commit -m &#39;xxxx&#39;</span>
+</span><span class='line'><span class="nv">$ </span>git commit --amend <span class="c"># reword commit message</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># go back to master and merge it</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span>git checkout master
+</span><span class='line'><span class="nv">$ </span>git merge branch_name
+</span><span class='line'>
+</span><span class='line'><span class="c"># push to github </span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span>git remote add origin repos_git_ssh_url
+</span><span class='line'><span class="nv">$ </span>git push --all <span class="c"># both master and branches</span>
+</span><span class='line'><span class="nv">$ </span>git push origin master <span class="c"># you also can push master to remote only</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># reset or revert to HEAD version (HEAD refers to latest commit stage)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span>git reset HEAD --hard <span class="c"># --hard is dangerous (delete unstaged files)</span>
+</span><span class='line'><span class="nv">$ </span>git reset HEAD --soft <span class="c"># --soft will go back and keep files staged </span>
+</span><span class='line'><span class="nv">$ </span>git reset HEAD <span class="c"># will go back without tracking unstaged files</span>
+</span><span class='line'><span class="nv">$ </span>git revert HEAD <span class="c"># make HEAD stage as new stage</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># reset one file</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span>git checkout -- &lt;file&gt;
+</span><span class='line'>
+</span><span class='line'><span class="c"># conflick of rebase (merge is the same)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span>git rebase master <span class="c"># under second branch</span>
+</span><span class='line'><span class="c"># conflick ...</span>
+</span><span class='line'><span class="c"># modify conflick &lt;file&gt;</span>
+</span><span class='line'><span class="c"># then </span>
+</span><span class='line'><span class="nv">$ </span>git add &lt;file&gt;
+</span><span class='line'><span class="nv">$ </span>git rebase --continue
+</span><span class='line'><span class="c"># done.</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># To remove untracked files / directories do:</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$ </span>git clean -fdx
+</span><span class='line'><span class="c"># -f - force</span>
+</span><span class='line'><span class="c"># -d - directories too</span>
+</span><span class='line'><span class="c"># -x - remove ignored files too ( don&#39;t use this if you don&#39;t want to remove ignored files)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>great reference</h3>
+
+<p><a href="http://blog.yorkxin.org/posts/2011/07/29/git-rebase">http://blog.yorkxin.org/posts/2011/07/29/git-rebase</a> <br/>
+<a href="http://blog.gogojimmy.net/2012/02/29/git-scenario/">http://blog.gogojimmy.net/2012/02/29/git-scenario/</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -451,6 +606,10 @@ github <a href="https://help.github.com/articles/generating-ssh-keys/">上傳ssh
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/15/how-to-put-css-in-html-body/">How to Put Css in Html Body?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/09/19/converting-file-to-utf8-encode-by-iconv/">Converting File to Utf8 Encode by Iconv</a>
       </li>
     
@@ -464,10 +623,6 @@ github <a href="https://help.github.com/articles/generating-ssh-keys/">上傳ssh
     
       <li class="post">
         <a href="/blog/2015/03/20/install-lavish-on-ubuntu-14-dot-04/">Install Lavish on Ubuntu 14.04</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/17/enable-ssh-in-ubuntu/">Enable Ssh in Ubuntu</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[AndyZ's Blog]]></title>
   <link href="http://andystu.github.io/atom.xml" rel="self"/>
   <link href="http://andystu.github.io/"/>
-  <updated>2015-09-19T23:01:58+08:00</updated>
+  <updated>2015-11-16T00:21:01+08:00</updated>
   <id>http://andystu.github.io/</id>
   <author>
     <name><![CDATA[AndyZ (Yu-Chieh Chang)]]></name>
@@ -12,6 +12,120 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Put Css in Html Body?]]></title>
+    <link href="http://andystu.github.io/blog/2015/11/15/how-to-put-css-in-html-body/"/>
+    <updated>2015-11-15T23:49:47+08:00</updated>
+    <id>http://andystu.github.io/blog/2015/11/15/how-to-put-css-in-html-body</id>
+    <content type="html"><![CDATA[<ul>
+<li>There are two ways to set css file into our html documents.</li>
+<li>first way: using pure javascript to append css file into head part of html.</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="kd">function</span> <span class="nx">loadCSS</span><span class="p">(</span><span class="nx">filename</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">file</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;link&quot;</span><span class="p">)</span>
+</span><span class='line'>      <span class="nx">file</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;rel&quot;</span><span class="p">,</span> <span class="s2">&quot;stylesheet&quot;</span><span class="p">)</span>
+</span><span class='line'>      <span class="nx">file</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;text/css&quot;</span><span class="p">)</span>
+</span><span class='line'>      <span class="nx">file</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;href&quot;</span><span class="p">,</span> <span class="nx">filename</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">file</span> <span class="o">!==</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span>
+</span><span class='line'>         <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;head&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span>
+</span><span class='line'>   <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">//just call a function to load a new CSS:</span>
+</span><span class='line'>  <span class="nx">loadCSS</span><span class="p">(</span><span class="s2">&quot;path_to_css/file.css&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!--more-->
+
+
+<ul>
+<li>Or we can simply use jquery.</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>$(&#39;head&#39;).append(&#39;<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;{yoururl}&quot;</span><span class="nt">&gt;</span>&#39;);
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Fashion way is to use style tag in body. (notice: some old browsers would not support this.)</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;&lt;/head&gt;</span>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">id =</span><span class="err"> </span><span class="s">&quot;scoped-content&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;style </span><span class="na">type =</span><span class="err"> </span><span class="s">&quot;text/css&quot;</span> <span class="na">scoped</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">h1</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>    <span class="nt">&lt;/style&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;h1&gt;</span>Hello<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;h1&gt;</span>World<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>references:
+- <a href="http://stackoverflow.com/questions/11833325/css-hack-adding-css-in-the-body-of-a-website">http://stackoverflow.com/questions/11833325/css-hack-adding-css-in-the-body-of-a-website</a>
+- <a href="http://stackoverflow.com/questions/2830296/using-style-tags-in-the-body-with-other-html">http://stackoverflow.com/questions/2830296/using-style-tags-in-the-body-with-other-html</a>
+- <a href="http://html5doctor.com/the-scoped-attribute/">http://html5doctor.com/the-scoped-attribute/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Converting File to Utf8 Encode by Iconv]]></title>
@@ -1463,24 +1577,6 @@ source/_includes/custom/category_feed.xml
 </span><span class='line'>// When there no function is defined, `fn('')` is parsed as string that equals the right hand side
 </span><span class='line'>// NB: in Sass 3.3 there is a native function: function-exists(twbs-font-path)
 </span><span class='line'>$bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")')) !default;</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Rails Project Rake Tips]]></title>
-    <link href="http://andystu.github.io/blog/2015/02/02/rails-project-rake-tips/"/>
-    <updated>2015-02-02T22:50:20+08:00</updated>
-    <id>http://andystu.github.io/blog/2015/02/02/rails-project-rake-tips</id>
-    <content type="html"><![CDATA[<ul>
-<li>Rails image disappears with error: Failed to load resource:</li>
-<li>net::ERR_CONTENT_LENGTH_MISMATCH</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake tmp:clear <span class="c"># for recompile asset tmp</span>
-</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

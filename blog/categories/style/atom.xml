@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Style, | AndyZ's Blog]]></title>
+  <link href="http://andystu.github.io/blog/categories/style/atom.xml" rel="self"/>
+  <link href="http://andystu.github.io/"/>
+  <updated>2015-11-16T00:21:01+08:00</updated>
+  <id>http://andystu.github.io/</id>
+  <author>
+    <name><![CDATA[AndyZ (Yu-Chieh Chang)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Put Css in Html Body?]]></title>
+    <link href="http://andystu.github.io/blog/2015/11/15/how-to-put-css-in-html-body/"/>
+    <updated>2015-11-15T23:49:47+08:00</updated>
+    <id>http://andystu.github.io/blog/2015/11/15/how-to-put-css-in-html-body</id>
+    <content type="html"><![CDATA[<ul>
+<li>There are two ways to set css file into our html documents.</li>
+<li>first way: using pure javascript to append css file into head part of html.</li>
+</ul>
+
+
+<p>&#8220;` html</p>
+
+<script type="text/javascript">
+
+   function loadCSS(filename){
+
+      var file = document.createElement("link")
+      file.setAttribute("rel", "stylesheet")
+      file.setAttribute("type", "text/css")
+      file.setAttribute("href", filename)
+
+      if (typeof file !== "undefined")
+         document.getElementsByTagName("head")[0].appendChild(file)
+   }
+
+
+  //just call a function to load a new CSS:
+  loadCSS("path_to_css/file.css")
+
+</script>
+
+
+<p>&#8220;`</p>
+
+<!--more-->
+
+
+<ul>
+<li>Or we can simply use jquery.</li>
+</ul>
+
+
+<pre><code class="html">$('head').append('&lt;link rel="stylesheet" type="text/css" href="{yoururl}"&gt;');
+</code></pre>
+
+<ul>
+<li>Fashion way is to use style tag in body. (notice: some old browsers would not support this.)</li>
+</ul>
+
+
+<p>&#8220;` html
+&lt;!DOCTYPE html>
+<html>
+<head></head>
+<body></p>
+
+<div id = "scoped-content">
+    <style type = "text/css" scoped>
+    h1 { color: red; }
+    </style>
+
+    <h1>Hello</h1>
+</div>
+
+
+
+
+<h1>World</h1>
+
+
+<p></body>
+</html>
+&#8220;`</p>
+
+<p>references:
+- <a href="http://stackoverflow.com/questions/11833325/css-hack-adding-css-in-the-body-of-a-website">http://stackoverflow.com/questions/11833325/css-hack-adding-css-in-the-body-of-a-website</a>
+- <a href="http://stackoverflow.com/questions/2830296/using-style-tags-in-the-body-with-other-html">http://stackoverflow.com/questions/2830296/using-style-tags-in-the-body-with-other-html</a>
+- <a href="http://html5doctor.com/the-scoped-attribute/">http://html5doctor.com/the-scoped-attribute/</a></p>
+]]></content>
+  </entry>
+  
+</feed>
