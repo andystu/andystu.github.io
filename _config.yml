@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://andystu.github.io
-title: AndyZ's Blog
+title: Yu-Chieh's Blog (Y.C. Chang)
 subtitle: Ruby on Rails / Rubygems / FullStack / Git / Mac notes.
-author: AndyZ (Yu-Chieh Chang)
+author: Y.C. Chang (Yu-Chieh Chang)
 simple_search: https://www.google.com/search
-description: This is AndyZ's blog
+description: This is Yu-Chieh's blog
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in

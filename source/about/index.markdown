@@ -6,7 +6,7 @@ comments: true
 sharing: true
 footer: true
 ---
-## AndyZ
+## Y.C. Chang
 
 Skilled web application developer with experience in Ruby on Rails, PHP, SQL, jQuery, JavaScript, Bootstrap, jQuery Mobile, PhoneGap, and Git. 
 
