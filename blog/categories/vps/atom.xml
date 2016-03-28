@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Vps | AndyZ's Blog]]></title>
+  <title><![CDATA[Category: Vps | Yu-Chieh's Blog (Y.C. Chang)]]></title>
   <link href="http://andystu.github.io/blog/categories/vps/atom.xml" rel="self"/>
   <link href="http://andystu.github.io/"/>
-  <updated>2016-03-28T22:39:15+08:00</updated>
+  <updated>2016-03-28T22:45:24+08:00</updated>
   <id>http://andystu.github.io/</id>
   <author>
-    <name><![CDATA[AndyZ (Yu-Chieh Chang)]]></name>
+    <name><![CDATA[Y.C. Chang (Yu-Chieh Chang)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
