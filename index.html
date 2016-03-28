@@ -9,13 +9,8 @@
   <meta name="author" content="AndyZ (Yu-Chieh Chang)">
 
   
-  <meta name="description" content="There are two ways to set css file into our html documents.
-first way: using pure javascript to append css file into head part of html. 1
-2
-3
-4
-5
-6 &hellip;">
+  <meta name="description" content="use ssh-keygen to generate keys (public/private) 1
+$ ssh-keygen -t rsa # -t refers to key type, here we use rsa The keys were generated under ~./ssh &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +79,96 @@ first way: using pure javascript to append css file into head part of html. 1
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/03/28/howto-ssh-connet-to-vps-server/">How to Setup for Ssh Connet to Vps Server</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-03-28T22:03:12+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:03 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>use ssh-keygen to generate keys (public/private)</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ssh-keygen -t rsa # -t refers to key type, here we use rsa</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>The keys were generated under ~./ssh folder</li>
+<li>copy public key to vps server</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd ~/.ssh
+</span><span class='line'>$ cat id_rsa.pub</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Sign in vps server</li>
+<li>Before we use ssh to connect vps, we have to activate ssh service for ssh connection.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install openssh-server # make sure your server install openssh service (here we use ubuntu)
+</span><span class='line'>$ sudo pico /etc/ssh/sshd_config # edit sshd setting
+</span><span class='line'># Port 12141 # do not forget to change port for security reason
+</span><span class='line'># PermitRootLogin yes --&gt; PermitRootLogin no # for disable root ssh login 
+</span><span class='line'>$ sudo /etc/init.d/ssh restart # restart sshd
+</span><span class='line'># or use service tool
+</span><span class='line'>$ service ssh restart</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>put your public key to vps</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mkdir .ssh
+</span><span class='line'>$ touch authorized_keys
+</span><span class='line'># then copy your local ~/.ssh/id_rsa.pub to authorized_keys by any text editor (vi,pico...etc)</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>On Mac, we can use &lsquo;ssh-copy-id&rsquo; to install our identity.pub in a remote machine&rsquo;s authorized_keys.</li>
+<li>Now, you can ssh to connect your vps directly without typing any password.</li>
+<li>enjoy.</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -647,62 +732,6 @@ first way: using pure javascript to append css file into head part of html. 1
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/02/19/error-message-on-brew-install-error-sha1-mismatch/">Error Message on Brew Install: Error: SHA1 Mismatch</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-02-19T00:46:10+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:46 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>Sometimes we might get error message when we use brew install xxxxx_package.</li>
-<li>What can we do to solve this?</li>
-<li><p>We could just remove the package which we already download.</p></li>
-<li><p>e.g.</p></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>...
-</span><span class='line'>Error: SHA1 mismatch
-</span><span class='line'>...
-</span><span class='line'>$ rm /Library/Caches/Homebrew/libpng-1.6.16.tar.xz
-</span><span class='line'># and install it again
-</span><span class='line'>$ brew install libpng
-</span><span class='line'>...</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>done.</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -722,6 +751,10 @@ first way: using pure javascript to append css file into head part of html. 1
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/28/howto-ssh-connet-to-vps-server/">How to Setup for Ssh Connet to Vps Server</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/15/how-to-put-css-in-html-body/">How to Put Css in Html Body?</a>
       </li>
     
@@ -735,10 +768,6 @@ first way: using pure javascript to append css file into head part of html. 1
     
       <li class="post">
         <a href="/blog/2015/04/01/how-to-install-ionic-and-its-dependencies/">How to Install Ionic and Its Dependencies</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/20/install-lavish-on-ubuntu-14-dot-04/">Install Lavish on Ubuntu 14.04</a>
       </li>
     
   </ul>
@@ -783,7 +812,7 @@ first way: using pure javascript to append css file into head part of html. 1
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - AndyZ (Yu-Chieh Chang) -
+  Copyright &copy; 2016 - AndyZ (Yu-Chieh Chang) -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[AndyZ's Blog]]></title>
   <link href="http://andystu.github.io/atom.xml" rel="self"/>
   <link href="http://andystu.github.io/"/>
-  <updated>2015-11-16T00:21:01+08:00</updated>
+  <updated>2016-03-28T22:39:15+08:00</updated>
   <id>http://andystu.github.io/</id>
   <author>
     <name><![CDATA[AndyZ (Yu-Chieh Chang)]]></name>
@@ -12,6 +12,76 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Setup for Ssh Connet to Vps Server]]></title>
+    <link href="http://andystu.github.io/blog/2016/03/28/howto-ssh-connet-to-vps-server/"/>
+    <updated>2016-03-28T22:03:12+08:00</updated>
+    <id>http://andystu.github.io/blog/2016/03/28/howto-ssh-connet-to-vps-server</id>
+    <content type="html"><![CDATA[<ul>
+<li>use ssh-keygen to generate keys (public/private)</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ssh-keygen -t rsa # -t refers to key type, here we use rsa</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>The keys were generated under ~./ssh folder</li>
+<li>copy public key to vps server</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd ~/.ssh
+</span><span class='line'>$ cat id_rsa.pub</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Sign in vps server</li>
+<li>Before we use ssh to connect vps, we have to activate ssh service for ssh connection.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install openssh-server # make sure your server install openssh service (here we use ubuntu)
+</span><span class='line'>$ sudo pico /etc/ssh/sshd_config # edit sshd setting
+</span><span class='line'># Port 12141 # do not forget to change port for security reason
+</span><span class='line'># PermitRootLogin yes --&gt; PermitRootLogin no # for disable root ssh login 
+</span><span class='line'>$ sudo /etc/init.d/ssh restart # restart sshd
+</span><span class='line'># or use service tool
+</span><span class='line'>$ service ssh restart</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>put your public key to vps</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ mkdir .ssh
+</span><span class='line'>$ touch authorized_keys
+</span><span class='line'># then copy your local ~/.ssh/id_rsa.pub to authorized_keys by any text editor (vi,pico...etc)</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>On Mac, we can use &lsquo;ssh-copy-id&rsquo; to install our identity.pub in a remote machine&rsquo;s authorized_keys.</li>
+<li>Now, you can ssh to connect your vps directly without typing any password.</li>
+<li>enjoy.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Put Css in Html Body?]]></title>
@@ -1481,102 +1551,6 @@ source/_includes/custom/category_feed.xml
 </span><span class='line'>  3. 必須要有 #{action}.js.erb
 </span><span class='line'>
 </span><span class='line'>對應的 js.erb 必須處接下來的事情 e.g. 刪除資料、redirects、update forms ... etc</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Bootstrap Tips: Some Resources for Bootstrap Customization]]></title>
-    <link href="http://andystu.github.io/blog/2015/02/04/bootstrap-tips-some-resources-for-bootstrap-customization/"/>
-    <updated>2015-02-04T10:48:54+08:00</updated>
-    <id>http://andystu.github.io/blog/2015/02/04/bootstrap-tips-some-resources-for-bootstrap-customization</id>
-    <content type="html"><![CDATA[<ul>
-<li>useful online tools for generating bootstrap theme</li>
-</ul>
-
-
-<p><a href="http://pikock.github.io/bootstrap-magic/">http://pikock.github.io/bootstrap-magic/</a></p>
-
-<p><a href="http://www.lavishbootstrap.com/">http://www.lavishbootstrap.com/</a></p>
-
-<p><a href="http://paintstrap.com/">http://paintstrap.com/</a></p>
-
-<p><a href="http://paintstrap.com/gallery/">http://paintstrap.com/gallery/</a></p>
-
-<p><a href="http://bootswatchr.com/">http://bootswatchr.com/</a></p>
-
-<p><a href="http://stylebootstrap.info/">http://stylebootstrap.info/</a></p>
-
-<p><a href="http://bootsnipp.com/">http://bootsnipp.com/</a></p>
-
-<!--more-->
-
-
-<ul>
-<li>fake images</li>
-</ul>
-
-
-<p><a href="http://lorempixel.com">http://lorempixel.com</a></p>
-
-<p><a href="http://placekitten.com">http://placekitten.com</a></p>
-
-<p><a href="http://placehold.it">http://placehold.it</a></p>
-
-<ul>
-<li>desktop tools</li>
-</ul>
-
-
-<p><a href="http://www.pingendo.com/">http://www.pingendo.com/</a></p>
-
-<ul>
-<li>layout tools</li>
-</ul>
-
-
-<p><a href="http://www.layoutit.com/">http://www.layoutit.com/</a></p>
-
-<ul>
-<li>useful plug-ins</li>
-</ul>
-
-
-<p><a href="http://vitalets.github.io/x-editable/">http://vitalets.github.io/x-editable/</a></p>
-
-<p><a href="https://github.com/rorlab/bootstrap-tagsinput-rails">https://github.com/rorlab/bootstrap-tagsinput-rails</a></p>
-
-<p><a href="http://timschlechter.github.io/bootstrap-tagsinput/examples/">http://timschlechter.github.io/bootstrap-tagsinput/examples/</a></p>
-
-<ul>
-<li>important reference</li>
-</ul>
-
-
-<p><a href="http://getbootstrap.com/customize/">http://getbootstrap.com/customize/</a></p>
-
-<p><a href="http://mashable.com/2013/10/20/bootstrap-editors/">http://mashable.com/2013/10/20/bootstrap-editors/</a></p>
-
-<p><a href="https://github.com/twbs/bootstrap-sass/tree/master/assets/stylesheets/bootstrap/mixins">https://github.com/twbs/bootstrap-sass/tree/master/assets/stylesheets/bootstrap/mixins</a></p>
-
-<ul>
-<li>convert tools</li>
-</ul>
-
-
-<p>gem &lsquo;less2sass&rsquo;
-<a href="https://rubygems.org/gems/less2sass">https://rubygems.org/gems/less2sass</a></p>
-
-<p>don&rsquo;t forget to add twbs-font-path on top or variable.sass file</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>// When true, asset path helpers are used, otherwise the regular CSS `url()` is used.
-</span><span class='line'>// When there no function is defined, `fn('')` is parsed as string that equals the right hand side
-</span><span class='line'>// NB: in Sass 3.3 there is a native function: function-exists(twbs-font-path)
-</span><span class='line'>$bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")')) !default;</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

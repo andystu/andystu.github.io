@@ -9,8 +9,15 @@
   <meta name="author" content="AndyZ (Yu-Chieh Chang)">
 
   
-  <meta name="description" content="Install git via homebrew 1
-$ brew install git # If we want to use gitk (git GUI), this way is very convinient. (however, I think SourceTree is better &hellip;">
+  <meta name="description" content="git-flow usage notes install git-flow on Mac 1
+$ brew install git-flow # Done usage how-to (for feature) 1
+2
+3
+4
+5
+6
+7
+$ git flow init # under &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,6 +86,90 @@ $ brew install git # If we want to use gitk (git GUI), this way is very convinie
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/12/24/git-flow-usage/">Git Flow Usage</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-24T23:34:12+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:34 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>git-flow usage notes</h3>
+
+<ul>
+<li>install git-flow on Mac</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>brew install git-flow <span class="c"># Done</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>usage how-to (for feature)</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git flow init <span class="c"># under project folder, git-flow would ask few questions, using the default value is recommended. </span>
+</span><span class='line'><span class="nv">$ </span>git flow feature start MY_FEATURE <span class="c"># XXX is branch name</span>
+</span><span class='line'><span class="c"># add some files or do something ...</span>
+</span><span class='line'><span class="nv">$ </span>git add .
+</span><span class='line'><span class="nv">$ </span>git commmit -am <span class="s1">&#39;do something ...&#39;</span>
+</span><span class='line'><span class="nv">$ </span>git flow feature publish MY_FEATURE <span class="c"># push to remote repo</span>
+</span><span class='line'><span class="nv">$ </span>git flow feature finish MY_FEATURE
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>usage how-to 2 (for release)</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git flow release start RELEASE <span class="o">[</span>BASE<span class="o">]</span>
+</span><span class='line'><span class="c"># e.g. git flow release start Version_1.0</span>
+</span><span class='line'><span class="nv">$ </span>git add .
+</span><span class='line'><span class="nv">$ </span>git commit -am <span class="s1">&#39;do something ...&#39;</span>
+</span><span class='line'><span class="nv">$ </span>git flow release finish RELEASE
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>[recommand reference]</h4>
+
+<p><a href="http://danielkummer.github.io/git-flow-cheatsheet/">http://danielkummer.github.io/git-flow-cheatsheet/</a> <br/>
+<a href="http://fireqqtw.logdown.com/posts/206951-git-flow-notes">http://fireqqtw.logdown.com/posts/206951-git-flow-notes</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -606,6 +697,10 @@ github <a href="https://help.github.com/articles/generating-ssh-keys/">上傳ssh
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/28/howto-ssh-connet-to-vps-server/">How to Setup for Ssh Connet to Vps Server</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/15/how-to-put-css-in-html-body/">How to Put Css in Html Body?</a>
       </li>
     
@@ -619,10 +714,6 @@ github <a href="https://help.github.com/articles/generating-ssh-keys/">上傳ssh
     
       <li class="post">
         <a href="/blog/2015/04/01/how-to-install-ionic-and-its-dependencies/">How to Install Ionic and Its Dependencies</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/20/install-lavish-on-ubuntu-14-dot-04/">Install Lavish on Ubuntu 14.04</a>
       </li>
     
   </ul>
@@ -667,7 +758,7 @@ github <a href="https://help.github.com/articles/generating-ssh-keys/">上傳ssh
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - AndyZ (Yu-Chieh Chang) -
+  Copyright &copy; 2016 - AndyZ (Yu-Chieh Chang) -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

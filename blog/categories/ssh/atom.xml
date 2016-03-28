@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ssh | AndyZ's Blog]]></title>
   <link href="http://andystu.github.io/blog/categories/ssh/atom.xml" rel="self"/>
   <link href="http://andystu.github.io/"/>
-  <updated>2015-11-16T00:21:01+08:00</updated>
+  <updated>2016-03-28T22:39:15+08:00</updated>
   <id>http://andystu.github.io/</id>
   <author>
     <name><![CDATA[AndyZ (Yu-Chieh Chang)]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Setup for Ssh Connet to Vps Server]]></title>
+    <link href="http://andystu.github.io/blog/2016/03/28/howto-ssh-connet-to-vps-server/"/>
+    <updated>2016-03-28T22:03:12+08:00</updated>
+    <id>http://andystu.github.io/blog/2016/03/28/howto-ssh-connet-to-vps-server</id>
+    <content type="html"><![CDATA[<ul>
+<li>use ssh-keygen to generate keys (public/private)
+<code>
+$ ssh-keygen -t rsa # -t refers to key type, here we use rsa
+</code></li>
+<li>The keys were generated under ~./ssh folder</li>
+<li>copy public key to vps server
+<code>
+$ cd ~/.ssh
+$ cat id_rsa.pub
+</code></li>
+<li>Sign in vps server</li>
+<li>Before we use ssh to connect vps, we have to activate ssh service for ssh connection.
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install openssh-server # make sure your server install openssh service (here we use ubuntu)
+</span><span class='line'>$ sudo pico /etc/ssh/sshd_config # edit sshd setting
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Port 12141 # do not forget to change port for security reason&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;PermitRootLogin yes &ndash;&gt; PermitRootLogin no # for disable root ssh login&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>$ sudo /etc/init.d/ssh restart # restart sshd
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;or use service tool&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;$ service ssh restart</span></code></pre></td></tr></table></div></figure></p></li>
+<li>put your public key to vps
+&#8220;`
+$ mkdir .ssh
+$ touch authorized_keys
+
+<h1>then copy your local ~/.ssh/id_rsa.pub to authorized_keys by any text editor (vi,pico&hellip;etc)</h1>
+
+<p>&#8220;`</p></li>
+<li>On Mac, we can use &lsquo;ssh-copy-id&rsquo; to install our identity.pub in a remote machine&rsquo;s authorized_keys.</li>
+<li>Now, you can ssh to connect your vps directly without typing any password.</li>
+<li>enjoy.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Enable Ssh in Ubuntu]]></title>

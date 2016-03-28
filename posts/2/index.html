@@ -9,15 +9,9 @@
   <meta name="author" content="AndyZ (Yu-Chieh Chang)">
 
   
-  <meta name="description" content="1
-2
-3
-4
-5
-6
-$ heroku apps:rename NEW_APP_NAME # for rename app
-$ heroku create NEW_APP_NAME # for create new name
-$ heroku pg:reset DB_NAME # for &hellip;">
+  <meta name="description" content="Sometimes we might get error message when we use brew install xxxxx_package.
+What can we do to solve this?
+We could just remove the package which we &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +80,62 @@ $ heroku pg:reset DB_NAME # for &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/19/error-message-on-brew-install-error-sha1-mismatch/">Error Message on Brew Install: Error: SHA1 Mismatch</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-19T00:46:10+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:46 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>Sometimes we might get error message when we use brew install xxxxx_package.</li>
+<li>What can we do to solve this?</li>
+<li><p>We could just remove the package which we already download.</p></li>
+<li><p>e.g.</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>...
+</span><span class='line'>Error: SHA1 mismatch
+</span><span class='line'>...
+</span><span class='line'>$ rm /Library/Caches/Homebrew/libpng-1.6.16.tar.xz
+</span><span class='line'># and install it again
+</span><span class='line'>$ brew install libpng
+</span><span class='line'>...</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>done.</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -558,57 +608,6 @@ source/_includes/custom/category_feed.xml
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/02/04/bootstrap-tips-some-resources-for-bootstrap-customization/">Bootstrap Tips: Some Resources for Bootstrap Customization</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-02-04T10:48:54+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:48 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>useful online tools for generating bootstrap theme</li>
-</ul>
-
-
-<p><a href="http://pikock.github.io/bootstrap-magic/">http://pikock.github.io/bootstrap-magic/</a></p>
-
-<p><a href="http://www.lavishbootstrap.com/">http://www.lavishbootstrap.com/</a></p>
-
-<p><a href="http://paintstrap.com/">http://paintstrap.com/</a></p>
-
-<p><a href="http://paintstrap.com/gallery/">http://paintstrap.com/gallery/</a></p>
-
-<p><a href="http://bootswatchr.com/">http://bootswatchr.com/</a></p>
-
-<p><a href="http://stylebootstrap.info/">http://stylebootstrap.info/</a></p>
-
-<p><a href="http://bootsnipp.com/">http://bootsnipp.com/</a></p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/02/04/bootstrap-tips-some-resources-for-bootstrap-customization/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/3">&larr; Older</a>
@@ -630,6 +629,10 @@ source/_includes/custom/category_feed.xml
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/28/howto-ssh-connet-to-vps-server/">How to Setup for Ssh Connet to Vps Server</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/15/how-to-put-css-in-html-body/">How to Put Css in Html Body?</a>
       </li>
     
@@ -643,10 +646,6 @@ source/_includes/custom/category_feed.xml
     
       <li class="post">
         <a href="/blog/2015/04/01/how-to-install-ionic-and-its-dependencies/">How to Install Ionic and Its Dependencies</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/20/install-lavish-on-ubuntu-14-dot-04/">Install Lavish on Ubuntu 14.04</a>
       </li>
     
   </ul>
@@ -691,7 +690,7 @@ source/_includes/custom/category_feed.xml
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - AndyZ (Yu-Chieh Chang) -
+  Copyright &copy; 2016 - AndyZ (Yu-Chieh Chang) -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

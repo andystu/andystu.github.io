@@ -9,10 +9,7 @@
   <meta name="author" content="AndyZ (Yu-Chieh Chang)">
 
   
-  <meta name="description" content="
-Rails image disappears with error: Failed to load resource:
-net::ERR_CONTENT_LENGTH_MISMATCH 1
-$ rake tmp:clear # for recompile asset tmp ">
+  <meta name="description" content="useful online tools for generating bootstrap theme http://pikock.github.io/bootstrap-magic/ http://www.lavishbootstrap.com/ http://paintstrap.com/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +78,57 @@ $ rake tmp:clear # for recompile asset tmp ">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/04/bootstrap-tips-some-resources-for-bootstrap-customization/">Bootstrap Tips: Some Resources for Bootstrap Customization</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-04T10:48:54+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:48 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>useful online tools for generating bootstrap theme</li>
+</ul>
+
+
+<p><a href="http://pikock.github.io/bootstrap-magic/">http://pikock.github.io/bootstrap-magic/</a></p>
+
+<p><a href="http://www.lavishbootstrap.com/">http://www.lavishbootstrap.com/</a></p>
+
+<p><a href="http://paintstrap.com/">http://paintstrap.com/</a></p>
+
+<p><a href="http://paintstrap.com/gallery/">http://paintstrap.com/gallery/</a></p>
+
+<p><a href="http://bootswatchr.com/">http://bootswatchr.com/</a></p>
+
+<p><a href="http://stylebootstrap.info/">http://stylebootstrap.info/</a></p>
+
+<p><a href="http://bootsnipp.com/">http://bootsnipp.com/</a></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/02/04/bootstrap-tips-some-resources-for-bootstrap-customization/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -577,101 +625,6 @@ $ rake tmp:clear # for recompile asset tmp ">
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/01/09/change-default-web-server-and-timezone-for-heroku/">Change Default Web Server and Timezone for Heroku</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-01-09T12:17:25+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:17 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>add web server gem to your Gemfile</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">group</span> <span class="ss">:production</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;pg&#39;</span>
-</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;rails_12factor&#39;</span>
-</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;thin&#39;</span> <span class="c1"># web server : thin</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>bundle it for updating your Gemfile.lock</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>bundle install
-</span><span class='line'><span class="nv">$ </span>git add .
-</span><span class='line'><span class="nv">$ </span>git commit -am <span class="s1">&#39;bundle and update Gemfile.lock&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>deploy to heroku</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git push heroku master
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>done.</h4>
-
-<ul>
-<li>time zone config for heroku</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>heroku config:add <span class="nv">TZ</span><span class="o">=</span>Asia/Taipei
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>done.</h4>
-
-<ul>
-<li>for reset pg DB</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>heroku pg:reset DATABASE_URL --confirm heroku_app_name
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/4">&larr; Older</a>
@@ -693,6 +646,10 @@ $ rake tmp:clear # for recompile asset tmp ">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/28/howto-ssh-connet-to-vps-server/">How to Setup for Ssh Connet to Vps Server</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/15/how-to-put-css-in-html-body/">How to Put Css in Html Body?</a>
       </li>
     
@@ -706,10 +663,6 @@ $ rake tmp:clear # for recompile asset tmp ">
     
       <li class="post">
         <a href="/blog/2015/04/01/how-to-install-ionic-and-its-dependencies/">How to Install Ionic and Its Dependencies</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/20/install-lavish-on-ubuntu-14-dot-04/">Install Lavish on Ubuntu 14.04</a>
       </li>
     
   </ul>
@@ -754,7 +707,7 @@ $ rake tmp:clear # for recompile asset tmp ">
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - AndyZ (Yu-Chieh Chang) -
+  Copyright &copy; 2016 - AndyZ (Yu-Chieh Chang) -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

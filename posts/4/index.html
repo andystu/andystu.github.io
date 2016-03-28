@@ -9,13 +9,12 @@
   <meta name="author" content="AndyZ (Yu-Chieh Chang)">
 
   
-  <meta name="description" content="create a demo project by rails 1
-$ rails new topic add gem &lsquo;devise&rsquo; to Gemfile then bundle it. 1
+  <meta name="description" content="add web server gem to your Gemfile 1
 2
 3
 4
-# Gemfile
-gem &#39;devise&#39; $ &hellip;">
+5
+group :production do gem &#39;pg&#39; gem &#39;rails_12factor&#39; gem &#39;thin&#39; # web server : &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +83,101 @@ gem &#39;devise&#39; $ &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/01/09/change-default-web-server-and-timezone-for-heroku/">Change Default Web Server and Timezone for Heroku</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-09T12:17:25+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:17 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>add web server gem to your Gemfile</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">group</span> <span class="ss">:production</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;pg&#39;</span>
+</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;rails_12factor&#39;</span>
+</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;thin&#39;</span> <span class="c1"># web server : thin</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>bundle it for updating your Gemfile.lock</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>bundle install
+</span><span class='line'><span class="nv">$ </span>git add .
+</span><span class='line'><span class="nv">$ </span>git commit -am <span class="s1">&#39;bundle and update Gemfile.lock&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>deploy to heroku</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git push heroku master
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>done.</h4>
+
+<ul>
+<li>time zone config for heroku</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>heroku config:add <span class="nv">TZ</span><span class="o">=</span>Asia/Taipei
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>done.</h4>
+
+<ul>
+<li>for reset pg DB</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>heroku pg:reset DATABASE_URL --confirm heroku_app_name
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -862,90 +956,6 @@ Rails 3 &ndash;> </em>_filter</p></li>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/12/24/git-flow-usage/">Git Flow Usage</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-12-24T23:34:12+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:34 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>git-flow usage notes</h3>
-
-<ul>
-<li>install git-flow on Mac</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>brew install git-flow <span class="c"># Done</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>usage how-to (for feature)</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git flow init <span class="c"># under project folder, git-flow would ask few questions, using the default value is recommended. </span>
-</span><span class='line'><span class="nv">$ </span>git flow feature start MY_FEATURE <span class="c"># XXX is branch name</span>
-</span><span class='line'><span class="c"># add some files or do something ...</span>
-</span><span class='line'><span class="nv">$ </span>git add .
-</span><span class='line'><span class="nv">$ </span>git commmit -am <span class="s1">&#39;do something ...&#39;</span>
-</span><span class='line'><span class="nv">$ </span>git flow feature publish MY_FEATURE <span class="c"># push to remote repo</span>
-</span><span class='line'><span class="nv">$ </span>git flow feature finish MY_FEATURE
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>usage how-to 2 (for release)</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git flow release start RELEASE <span class="o">[</span>BASE<span class="o">]</span>
-</span><span class='line'><span class="c"># e.g. git flow release start Version_1.0</span>
-</span><span class='line'><span class="nv">$ </span>git add .
-</span><span class='line'><span class="nv">$ </span>git commit -am <span class="s1">&#39;do something ...&#39;</span>
-</span><span class='line'><span class="nv">$ </span>git flow release finish RELEASE
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>[recommand reference]</h4>
-
-<p><a href="http://danielkummer.github.io/git-flow-cheatsheet/">http://danielkummer.github.io/git-flow-cheatsheet/</a> <br/>
-<a href="http://fireqqtw.logdown.com/posts/206951-git-flow-notes">http://fireqqtw.logdown.com/posts/206951-git-flow-notes</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/5">&larr; Older</a>
@@ -967,6 +977,10 @@ Rails 3 &ndash;> </em>_filter</p></li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/28/howto-ssh-connet-to-vps-server/">How to Setup for Ssh Connet to Vps Server</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/15/how-to-put-css-in-html-body/">How to Put Css in Html Body?</a>
       </li>
     
@@ -980,10 +994,6 @@ Rails 3 &ndash;> </em>_filter</p></li>
     
       <li class="post">
         <a href="/blog/2015/04/01/how-to-install-ionic-and-its-dependencies/">How to Install Ionic and Its Dependencies</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/20/install-lavish-on-ubuntu-14-dot-04/">Install Lavish on Ubuntu 14.04</a>
       </li>
     
   </ul>
@@ -1028,7 +1038,7 @@ Rails 3 &ndash;> </em>_filter</p></li>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - AndyZ (Yu-Chieh Chang) -
+  Copyright &copy; 2016 - AndyZ (Yu-Chieh Chang) -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
